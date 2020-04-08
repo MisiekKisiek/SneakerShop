@@ -5,19 +5,23 @@ import "bootstrap";
 import $ from "jquery";
 import "./App.css";
 import MainPage from "./pages/MainPage";
+import News from "./pages/News";
+import Mans from "./pages/Mans";
+import data from "./shopItems/itemsList.json";
 
 class App extends Component {
-  state = {};
-
+  state = {
+    data: data,
+  };
   render() {
     return (
       <Router>
         <div className="App">
           <div className="container-fluid p-0">
             <div className="row-fluid">
-              <nav class="navbar navbar-expand-md navbar-light mx-auto shadow-sm">
+              <nav className="navbar navbar-expand-md navbar-light mx-auto shadow-sm">
                 <span
-                  class="navbar-brand font-weight-bold font-italic"
+                  className="navbar-brand font-weight-bold font-italic"
                   href="#"
                 >
                   Sneakero
@@ -37,13 +41,21 @@ class App extends Component {
                   id="collapseContent"
                 >
                   <ul className="navbar-nav justify-content-center mx-auto position-relative">
-                    <li className="nav-item">
+                    <li
+                      className="nav-item"
+                      data-toggle="collapse"
+                      data-target=".navbar-collapse.show"
+                    >
                       <NavLink className="nav-link" to="/MainPage">
                         Main Page
                       </NavLink>
                     </li>
-                    <li className="nav-item mx-md-3">
-                      <NavLink className="nav-link" to="/b">
+                    <li
+                      className="nav-item mx-md-3"
+                      data-toggle="collapse"
+                      data-target=".navbar-collapse.show"
+                    >
+                      <NavLink className="nav-link" to="/News">
                         News
                       </NavLink>
                     </li>
@@ -55,8 +67,12 @@ class App extends Component {
                       >
                         Shop
                       </a>
-                      <div className="dropdown-menu">
-                        <NavLink to="e" className="dropdown-item">
+                      <div
+                        className="dropdown-menu"
+                        data-toggle="collapse"
+                        data-target=".navbar-collapse.show"
+                      >
+                        <NavLink to="/Mans" className="dropdown-item">
                           Mens
                         </NavLink>
                         <NavLink to="f" className="dropdown-item">
@@ -67,7 +83,11 @@ class App extends Component {
                         </NavLink>
                       </div>
                     </li>
-                    <li className="nav-item mx-md-3">
+                    <li
+                      className="nav-item mx-md-3"
+                      data-toggle="collapse"
+                      data-target=".navbar-collapse.show"
+                    >
                       <NavLink className="nav-link" to="/d">
                         Contact
                       </NavLink>
@@ -78,15 +98,15 @@ class App extends Component {
             </div>
           </div>
 
-          <div className="pages container px-4 px-md-0">
+          <div className="pages container px-4 px-md-0 d-flex align-items-center">
             <Route exact path="/MainPage">
               <MainPage></MainPage>
             </Route>
             <Route exact path="/News">
-              <MainPage></MainPage>
+              <News></News>
             </Route>
             <Route exact path="/Mans">
-              <MainPage></MainPage>
+              <Mans data={this.state.data}></Mans>
             </Route>
             <Route exact path="/Women">
               <MainPage></MainPage>

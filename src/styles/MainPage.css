@@ -9,10 +9,23 @@
 .mainPage .part2 .prefix {
   margin-bottom: -2px;
 }
-.mainPage .part2 .letters {
+
+.mainPage .part2 .letterWrap {
   position: relative;
-  height: 36px;
-  width: 100px;
+  overflow: hidden;
+}
+
+.mainPage .part2 .letters {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.mainPage .part2 .letters3 {
+  position: relative;
+  top: 0;
+  left: 0;
   overflow: hidden;
 }
 
@@ -20,20 +33,53 @@
   position: relative;
   font-size: 24px;
   font-weight: bold;
-  /* transition: .3s; */
-  animation: letterMove 12s infinite backwards ease-in-out;
+  color: #a00050;
+  animation: letterMove 15s infinite backwards ease-in-out;
 }
-.mainPage .part2 .letters span + span {
-  animation: letterMove 12s 0.1s infinite backwards ease-in-out;
+.mainPage .part2 .letters1 span + span {
+  animation: letterMove 15s 0.1s infinite backwards ease-in-out;
 }
-.mainPage .part2 .letters span + span + span {
-  animation: letterMove 12s 0.2s infinite backwards ease-in-out;
+.mainPage .part2 .letters1 span + span + span {
+  animation: letterMove 15s 0.2s infinite backwards ease-in-out;
 }
-.mainPage .part2 .letters span + span + span + span {
-  animation: letterMove 12s 0.3s infinite backwards ease-in-out;
+.mainPage .part2 .letters1 span + span + span + span {
+  animation: letterMove 15s 0.3s infinite backwards ease-in-out;
 }
-.mainPage .part2 .letters span + span + span + span + span {
-  animation: letterMove 12s 0.4s infinite backwards ease-in-out;
+.mainPage .part2 .letters1 span + span + span + span + span {
+  animation: letterMove 15s 0.4s infinite backwards ease-in-out;
+}
+.mainPage .part2 .letters2 span {
+  animation: letterMove 15s 5s infinite backwards ease-in-out;
+}
+.mainPage .part2 .letters2 span + span {
+  animation: letterMove 15s 5.1s infinite backwards ease-in-out;
+}
+.mainPage .part2 .letters2 span + span + span {
+  animation: letterMove 15s 5.2s infinite backwards ease-in-out;
+}
+.mainPage .part2 .letters2 span + span + span + span {
+  animation: letterMove 15s 5.3s infinite backwards ease-in-out;
+}
+.mainPage .part2 .letters2 span + span + span + span + span {
+  animation: letterMove 15s 5.4s infinite backwards ease-in-out;
+}
+.mainPage .part2 .letters3 span {
+  animation: letterMove 15s 10s infinite backwards ease-in-out;
+}
+.mainPage .part2 .letters3 span + span {
+  animation: letterMove 15s 10.1s infinite backwards ease-in-out;
+}
+.mainPage .part2 .letters3 span + span + span {
+  animation: letterMove 15s 10.2s infinite backwards ease-in-out;
+}
+.mainPage .part2 .letters3 span + span + span + span {
+  animation: letterMove 15s 10.3s infinite backwards ease-in-out;
+}
+.mainPage .part2 .letters3 span + span + span + span + span {
+  animation: letterMove 15s 10.4s infinite backwards ease-in-out;
+}
+.mainPage .part2 .letters3 span + span + span + span + span + span {
+  animation: letterMove 15s 10.5s infinite backwards ease-in-out;
 }
 
 .mainPage .part2 .letters1 {
@@ -54,5 +100,13 @@
   }
   100% {
     top: 34px;
+  }
+}
+
+@media (max-width: 640px) {
+  .mainPage .part2 .letters1,
+  .mainPage .part2 .letters2 {
+    left: 50%;
+    transform: translate(-50%, 0);
   }
 }

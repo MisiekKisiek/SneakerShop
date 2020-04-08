@@ -10,9 +10,9 @@ class MainPage extends Component {
   state = {};
   render() {
     return (
-      <div className="mainPage row mx-0 my-5">
+      <div className="mainPage row mx-0 my-4">
         <div className="col-md-8 mx-auto shadow-sm p-3 rounded">
-          <div className="part1 col-12 px-0 d-flex flex-wrap no-gutters mx-auto align-items-end justify-content-center mb-5">
+          <div className="part1 col-12 px-0 d-flex flex-wrap no-gutters mx-auto align-items-end justify-content-center mb-4">
             <span className="no-gutters pb-0 pb-lg-1 font-weight-bold text-align-center mr-3 mb-3 mb-sm-0">
               We are
             </span>
@@ -23,15 +23,66 @@ class MainPage extends Component {
               alt=""
             />
           </div>
-          <div className="part2 d-flex flex-nowrap align-items-center">
-            <span className="prefix mr-3">We are dealing</span>
-            <span className="letters letters1 d-flex flex-row">
-              <span className="letter1 text-primary">S</span>
-              <span className="letter1 text-danger">T</span>
-              <span className="letter1 text-success">Y</span>
-              <span className="letter1 text-warning">L</span>
-              <span className="letter1 text-info">E</span>
+          <div className="part2 d-flex flex-wrap flex-nowrap-md align-items-center justify-content-center mb-4">
+            <span className="prefix col-12 col-md-auto text-center text-md-start">
+              We are dealing
             </span>
+            <span className="letterWrap col-12 col-md-auto p-0 pr-md-3 my-1 text-center text-md-start mx-auto mx-md-0">
+              <span className="letters letters1">
+                <span className="letter1">S</span>
+                <span className="letter1">H</span>
+                <span className="letter1">O</span>
+                <span className="letter1">E</span>
+                <span className="letter1">S</span>
+              </span>
+              <span className="letters letters2">
+                <span className="letter1">S</span>
+                <span className="letter1">T</span>
+                <span className="letter1">Y</span>
+                <span className="letter1">L</span>
+                <span className="letter1">E</span>
+              </span>
+              <span className="letters letters3">
+                <span className="letter1">S</span>
+                <span className="letter1">M</span>
+                <span className="letter1">I</span>
+                <span className="letter1">L</span>
+                <span className="letter1">E</span>
+              </span>
+            </span>
+            <span>
+              with <strong>Passion, Patience and Love...</strong>
+            </span>
+          </div>
+          <div className="part3">
+            <div
+              className="carousel slide col-12 col-md-8 mx-auto"
+              data-ride="carousel"
+            >
+              <div className="carousel-inner rounded border">
+                <div className="carousel-item active">
+                  <img
+                    src={require("../img/mainPageImg1.jpg")}
+                    alt="sneaker image"
+                    className="d-block w-100"
+                  />
+                </div>
+                <div className="carousel-item">
+                  <img
+                    src={require("../img/mainPageImg2.jpg")}
+                    alt="sneaker image"
+                    className="d-block w-100"
+                  />
+                </div>
+                <div className="carousel-item">
+                  <img
+                    src={require("../img/mainPageImg3.jpg")}
+                    alt="sneaker image"
+                    className="d-block w-100"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

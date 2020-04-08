@@ -1,0 +1,17 @@
+{
+    "items":[
+        {
+            "id":"1",
+            "brand":"Nike",
+            "model":"Air Max 97",
+            "male":"men",
+            "price": "555.99",
+            "colorsAndImages":[
+                {
+                    "color":"black-white",
+                    "img": "nike97black-white.jpg"
+                }
+            ]
+        }
+    ]
+}
