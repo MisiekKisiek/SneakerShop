@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { NavLink, Route, BrowserRouter as Router } from "react-router-dom";
+import {
+  NavLink,
+  Route,
+  Redirect,
+  BrowserRouter as Router,
+} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 import $ from "jquery";
@@ -13,6 +18,7 @@ class App extends Component {
   state = {
     data: data,
   };
+
   render() {
     return (
       <Router>
@@ -101,6 +107,9 @@ class App extends Component {
           <div className="pages container px-4 px-md-0 d-flex align-items-center">
             <Route exact path="/MainPage">
               <MainPage></MainPage>
+            </Route>
+            <Route exact path="/SneakerShop">
+              <Redirect to="/MainPage" />
             </Route>
             <Route exact path="/News">
               <News></News>

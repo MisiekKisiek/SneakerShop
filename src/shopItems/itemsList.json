@@ -8,8 +8,80 @@
             "price": "555.99",
             "colorsAndImages":[
                 {
-                    "color":"black-white",
+                    "colors":["black","white"],
                     "img": "nike97black-white.jpg"
+                },
+                {
+                    "colors":["white"],
+                    "img": "nike97white.jpg"
+                }
+            ]
+        },
+        {
+            "id":"2",
+            "brand":"Nike",
+            "model":"NMD R1",
+            "male":"men",
+            "price": "355.99",
+            "colorsAndImages":[
+                {
+                    "colors":["black","white"],
+                    "img": "nikenmdr1black-white.jpg"
+                },
+                {
+                    "colors":["white","purple"],
+                    "img": "nikenmdr1purple-white.jpg"
+                }
+            ]
+        },
+        {
+            "id":"3",
+            "brand":"Nike",
+            "model":"NMD R1",
+            "male":"men",
+            "price": "355.99",
+            "colorsAndImages":[
+                {
+                    "colors":["black","white"],
+                    "img": "nikenmdr1black-white.jpg"
+                },
+                {
+                    "colors":["white","purple"],
+                    "img": "nikenmdr1purple-white.jpg"
+                }
+            ]
+        },
+        {
+            "id":"4",
+            "brand":"Nike",
+            "model":"NMD R1",
+            "male":"men",
+            "price": "355.99",
+            "colorsAndImages":[
+                {
+                    "colors":["black","white"],
+                    "img": "nikenmdr1black-white.jpg"
+                },
+                {
+                    "colors":["white","purple"],
+                    "img": "nikenmdr1purple-white.jpg"
+                }
+            ]
+        },
+        {
+            "id":"5",
+            "brand":"Nike",
+            "model":"NMD R1",
+            "male":"men",
+            "price": "355.99",
+            "colorsAndImages":[
+                {
+                    "colors":["black","white"],
+                    "img": "nikenmdr1black-white.jpg"
+                },
+                {
+                    "colors":["white","purple"],
+                    "img": "nikenmdr1purple-white.jpg"
                 }
             ]
         }

@@ -3,110 +3,48 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 import $ from "jquery";
 import "../styles/Shop.css";
+import ShopItems from "../components/ShopItems";
+import FilterPanel from "../components/FilterPanel";
 
 class Mans extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+  slideImage = (images) => {
+    const items = images.map((e, index) => {
+      return (
+        <div className={index === 0 ? "carousel-item active" : "carousel-item"}>
+          <img
+            src={require(`../shopItems/${e.img}`)}
+            className="d-block w-100"
+            alt="sneaker"
+          />
+        </div>
+      );
+    });
+    return items;
+  };
+  renderItems = () => {
+    const items = this.props.data.items.map((e, index) => {
+      return (
+        <ShopItems
+          item={this.props.data.items[index]}
+          slide={this.slideImage}
+        ></ShopItems>
+      );
+    });
+    return items;
+  };
   render() {
-    console.log(this.props.data.items[0].colorsAndImages[0].img);
     return (
       <div className="container">
-        <div className="row">
-          <aside className="filter col-12">aa</aside>
+        <div className="row d-flex align-items-center  my-5">
+          <aside className="filter col-12">
+            <FilterPanel></FilterPanel>
+          </aside>
           <main className="items col-12 d-flex flex-row flex-wrap">
-            <div className="wrap col-12 col-md-3 my-3">
-              <div className="card overflow-hidden col-12 p-0">
-                <img
-                  className="card-img-top"
-                  src={require(`../shopItems/${this.props.data.items[0].colorsAndImages[0].img}`)}
-                  alt=""
-                />
-                <h5 className="card-title text-center pt-1">
-                  {this.props.data.items[0].brand}{" "}
-                  {this.props.data.items[0].model}
-                </h5>
-              </div>
-            </div>
-            <div className="wrap col-12 col-md-3 my-3">
-              <div className="card overflow-hidden col-12 p-0">
-                <img
-                  className="card-img-top"
-                  src={require(`../shopItems/${this.props.data.items[0].colorsAndImages[0].img}`)}
-                  alt=""
-                />
-                <h5 className="card-title text-center pt-1">
-                  {this.props.data.items[0].brand}{" "}
-                  {this.props.data.items[0].model}
-                </h5>
-              </div>
-            </div>
-            <div className="wrap col-12 col-md-3 my-3">
-              <div className="card overflow-hidden col-12 p-0">
-                <img
-                  className="card-img-top"
-                  src={require(`../shopItems/${this.props.data.items[0].colorsAndImages[0].img}`)}
-                  alt=""
-                />
-                <h5 className="card-title text-center pt-1">
-                  {this.props.data.items[0].brand}{" "}
-                  {this.props.data.items[0].model}
-                </h5>
-              </div>
-            </div>
-            <div className="wrap col-12 col-md-3 my-3">
-              <div className="card overflow-hidden col-12 p-0">
-                <img
-                  className="card-img-top"
-                  src={require(`../shopItems/${this.props.data.items[0].colorsAndImages[0].img}`)}
-                  alt=""
-                />
-                <h5 className="card-title text-center pt-1">
-                  {this.props.data.items[0].brand}{" "}
-                  {this.props.data.items[0].model}
-                </h5>
-              </div>
-            </div>
-            <div className="wrap col-12 col-md-3 my-3">
-              <div className="card overflow-hidden col-12 p-0">
-                <img
-                  className="card-img-top"
-                  src={require(`../shopItems/${this.props.data.items[0].colorsAndImages[0].img}`)}
-                  alt=""
-                />
-                <h5 className="card-title text-center pt-1">
-                  {this.props.data.items[0].brand}{" "}
-                  {this.props.data.items[0].model}
-                </h5>
-              </div>
-            </div>
-            <div className="wrap col-12 col-md-3 my-3">
-              <div className="card overflow-hidden col-12 p-0">
-                <img
-                  className="card-img-top"
-                  src={require(`../shopItems/${this.props.data.items[0].colorsAndImages[0].img}`)}
-                  alt=""
-                />
-                <h5 className="card-title text-center pt-1">
-                  {this.props.data.items[0].brand}{" "}
-                  {this.props.data.items[0].model}
-                </h5>
-              </div>
-            </div>
-            <div className="wrap col-12 col-md-3 my-3">
-              <div className="card overflow-hidden col-12 p-0">
-                <img
-                  className="card-img-top"
-                  src={require(`../shopItems/${this.props.data.items[0].colorsAndImages[0].img}`)}
-                  alt=""
-                />
-                <h5 className="card-title text-center pt-1">
-                  {this.props.data.items[0].brand}{" "}
-                  {this.props.data.items[0].model}
-                </h5>
-              </div>
-            </div>
+            {this.renderItems()}
           </main>
         </div>
       </div>
