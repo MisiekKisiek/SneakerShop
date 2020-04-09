@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/SneakerShop/static/css/main.dfd729c7.chunk.css",
+    "main.js": "/SneakerShop/static/js/main.ab2de0d3.chunk.js",
+    "main.js.map": "/SneakerShop/static/js/main.ab2de0d3.chunk.js.map",
+    "runtime-main.js": "/SneakerShop/static/js/runtime-main.d582ed84.js",
+    "runtime-main.js.map": "/SneakerShop/static/js/runtime-main.d582ed84.js.map",
+    "static/css/2.de424728.chunk.css": "/SneakerShop/static/css/2.de424728.chunk.css",
+    "static/js/2.bf0d4e0d.chunk.js": "/SneakerShop/static/js/2.bf0d4e0d.chunk.js",
+    "static/js/2.bf0d4e0d.chunk.js.map": "/SneakerShop/static/js/2.bf0d4e0d.chunk.js.map",
+    "index.html": "/SneakerShop/index.html",
+    "precache-manifest.e013f00f5fa7ec6cc9f1db3d5a9a265e.js": "/SneakerShop/precache-manifest.e013f00f5fa7ec6cc9f1db3d5a9a265e.js",
+    "service-worker.js": "/SneakerShop/service-worker.js",
+    "static/css/2.de424728.chunk.css.map": "/SneakerShop/static/css/2.de424728.chunk.css.map",
+    "static/css/main.dfd729c7.chunk.css.map": "/SneakerShop/static/css/main.dfd729c7.chunk.css.map",
+    "static/js/2.bf0d4e0d.chunk.js.LICENSE.txt": "/SneakerShop/static/js/2.bf0d4e0d.chunk.js.LICENSE.txt",
+    "static/media/1black-white.jpg": "/SneakerShop/static/media/1black-white.cd50d302.jpg",
+    "static/media/logo100rose.png": "/SneakerShop/static/media/logo100rose.4eb06d7a.png",
+    "static/media/mainPageImg1.jpg": "/SneakerShop/static/media/mainPageImg1.e19f36e8.jpg",
+    "static/media/mainPageImg2.jpg": "/SneakerShop/static/media/mainPageImg2.1ad9d299.jpg",
+    "static/media/mainPageImg3.jpg": "/SneakerShop/static/media/mainPageImg3.ae61d9b3.jpg",
+    "static/media/nike97black-white.jpg": "/SneakerShop/static/media/nike97black-white.b3ada815.jpg",
+    "static/media/nike97white.jpg": "/SneakerShop/static/media/nike97white.117c7362.jpg",
+    "static/media/nikenmdr1black-white.jpg": "/SneakerShop/static/media/nikenmdr1black-white.3f95b0b9.jpg",
+    "static/media/nikenmdr1purple-white.jpg": "/SneakerShop/static/media/nikenmdr1purple-white.4f2cb9fe.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d582ed84.js",
+    "static/css/2.de424728.chunk.css",
+    "static/js/2.bf0d4e0d.chunk.js",
+    "static/css/main.dfd729c7.chunk.css",
+    "static/js/main.ab2de0d3.chunk.js"
+  ]
+}
