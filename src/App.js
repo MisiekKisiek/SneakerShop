@@ -11,7 +11,7 @@ import $ from "jquery";
 import "./App.css";
 import MainPage from "./pages/MainPage";
 import News from "./pages/News";
-import Mans from "./pages/Mans";
+import Men from "./pages/Men";
 import data from "./shopItems/itemsList.json";
 
 class App extends Component {
@@ -78,8 +78,8 @@ class App extends Component {
                         data-toggle="collapse"
                         data-target=".navbar-collapse.show"
                       >
-                        <NavLink to="/Mans" className="dropdown-item">
-                          Mens
+                        <NavLink to="/Men" className="dropdown-item">
+                          Men
                         </NavLink>
                         <NavLink to="f" className="dropdown-item">
                           Women
@@ -114,8 +114,8 @@ class App extends Component {
             <Route exact path="/News">
               <News></News>
             </Route>
-            <Route exact path="/Mans">
-              <Mans data={this.state.data}></Mans>
+            <Route exact path="/Men">
+              <Men data={this.state.data}></Men>
             </Route>
             <Route exact path="/Women">
               <MainPage></MainPage>

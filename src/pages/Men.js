@@ -9,8 +9,16 @@ import FilterPanel from "../components/FilterPanel";
 class Mans extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      filter: {
+        name: "",
+        minPrice: 0,
+        maxPrice: "",
+        color: "",
+      },
+    };
   }
+
   slideImage = (images) => {
     const items = images.map((e, index) => {
       return (
@@ -25,6 +33,7 @@ class Mans extends Component {
     });
     return items;
   };
+
   renderItems = () => {
     const items = this.props.data.items.map((e, index) => {
       return (
@@ -36,12 +45,17 @@ class Mans extends Component {
     });
     return items;
   };
+
+  handleFilterSubmit = (e) => {
+    e.preventDefault();
+  };
+
   render() {
     return (
       <div className="container">
-        <div className="row d-flex align-items-center  my-5">
+        <div className="row d-flex align-items-center mt-2 mt-md-4">
           <aside className="filter col-12">
-            <FilterPanel></FilterPanel>
+            <FilterPanel handleSubmit={this.handleFilterSubmit}></FilterPanel>
           </aside>
           <main className="items col-12 d-flex flex-row flex-wrap">
             {this.renderItems()}

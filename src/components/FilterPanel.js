@@ -6,9 +6,9 @@ import $ from "jquery";
 const FilterPanel = (props) => {
   return (
     <div className="row">
-      <form className="col-md-8 mx-auto shadow-sm p-3 mb-5 rounded">
+      <form className="col-md-8 mx-auto shadow-sm p-3 mb-3 rounded">
         <div className="form-row">
-          <div className="form-group">
+          <div className="form-group col-md-6 px-2">
             <label htmlFor="SearchName">Name:</label>
             <input
               type="text"
@@ -28,7 +28,7 @@ const FilterPanel = (props) => {
               min="50"
             />
           </div>
-          <div className="form-group px-2 col">
+          <div className="form-group px-2 col-md-6">
             <label htmlFor="MaxPrice">Max. price:</label>
             <input
               type="number"
@@ -36,6 +36,26 @@ const FilterPanel = (props) => {
               id="MaxPrice"
               placeholder="1000"
             />
+          </div>
+          <div className="form-group px-2 col-md-6">
+            <label htmlFor="Color">Color:</label>
+            <select name="" id="Color" className="custom-select">
+              <option value="all" className="selected">
+                Choose color...
+              </option>
+              <option value="">white</option>
+              <option value="">black</option>
+              <option value="">purple</option>
+            </select>
+          </div>
+          <div className="form-group col-md-6 text-bottom d-flex align-items-end justify-content-center  mt-3 mt-md-0  px-2">
+            <button
+              type="submit"
+              className="btn btn-secondary col-6"
+              onClick={props.handleSubmit}
+            >
+              Filter
+            </button>
           </div>
         </div>
       </form>
