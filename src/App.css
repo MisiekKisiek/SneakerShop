@@ -22,6 +22,10 @@
   padding: 1rem;
 }
 
+/* .App .pages .mainPage {
+  min-height: calc(100vh - 54px - 40px);
+} */
+
 .App footer {
   height: 40px;
   line-height: 40px;

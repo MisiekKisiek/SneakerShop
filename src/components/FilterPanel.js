@@ -1,66 +1,105 @@
-import React from "react";
+import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
-import $ from "jquery";
 
-const FilterPanel = (props) => {
-  return (
-    <div className="row">
-      <form className="col-md-8 mx-auto shadow-sm p-3 mb-3 rounded">
-        <div className="form-row">
-          <div className="form-group col-md-6 px-2">
-            <label htmlFor="SearchName">Name:</label>
-            <input
-              type="text"
-              className="form-control"
-              id="SearchName"
-              placeholder="Search name..."
-            />
+class FilterPanel extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchName: "",
+      minPrice: "",
+      maxPrice: "",
+      color: "All colors",
+    };
+  }
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value,
+    });
+  };
+  render() {
+    return (
+      <div className="row">
+        <form className="col-md-8 mx-auto shadow-sm p-3 mb-3 rounded">
+          <div className="form-row">
+            <div className="form-group col-md-6 px-2">
+              <label htmlFor="searchName">Name:</label>
+              <input
+                type="text"
+                className="form-control"
+                id="searchName"
+                placeholder="Search name..."
+                value={this.state.searchName}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="w-100"></div>
+            <div className="form-group px-2 col-md-6">
+              <label htmlFor="minPrice">Min. price:</label>
+              <input
+                type="number"
+                className="form-control"
+                id="minPrice"
+                placeholder="50"
+                value={this.state.minPrice}
+                onChange={this.handleChange}
+                min="0"
+              />
+            </div>
+            <div className="form-group px-2 col-md-6">
+              <label htmlFor="maxPrice">Max. price:</label>
+              <input
+                type="number"
+                className="form-control"
+                id="maxPrice"
+                placeholder="1000"
+                value={this.state.maxPrice}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="form-group px-2 col-md-6">
+              <label htmlFor="color">Color:</label>
+              <select
+                name=""
+                id="color"
+                className="custom-select"
+                value={this.state.color}
+                onChange={this.handleChange}
+              >
+                <option value="All colors">All colors</option>
+                <option value="white">white</option>
+                <option value="black">black</option>
+                <option value="purple">purple</option>
+              </select>
+            </div>
+            <div className="form-group col-md-6 text-bottom d-flex align-items-end justify-content-center  mt-3 mt-md-0  px-2">
+              <button
+                type="submit"
+                className="btn btn-secondary col-6"
+                onClick={(e) => {
+                  this.props.handleSubmit(
+                    e,
+                    this.state.searchName,
+                    this.state.minPrice,
+                    this.state.maxPrice,
+                    this.state.color
+                  );
+                  this.setState({
+                    searchName: "",
+                    minPrice: "",
+                    maxPrice: "",
+                    color: "All colors",
+                  });
+                }}
+              >
+                Filter
+              </button>
+            </div>
           </div>
-          <div className="w-100"></div>
-          <div className="form-group px-2 col-md-6">
-            <label htmlFor="MinPrice">Min. price:</label>
-            <input
-              type="number"
-              className="form-control"
-              id="MinPrice"
-              placeholder="50"
-              min="50"
-            />
-          </div>
-          <div className="form-group px-2 col-md-6">
-            <label htmlFor="MaxPrice">Max. price:</label>
-            <input
-              type="number"
-              className="form-control"
-              id="MaxPrice"
-              placeholder="1000"
-            />
-          </div>
-          <div className="form-group px-2 col-md-6">
-            <label htmlFor="Color">Color:</label>
-            <select name="" id="Color" className="custom-select">
-              <option value="all" className="selected">
-                Choose color...
-              </option>
-              <option value="">white</option>
-              <option value="">black</option>
-              <option value="">purple</option>
-            </select>
-          </div>
-          <div className="form-group col-md-6 text-bottom d-flex align-items-end justify-content-center  mt-3 mt-md-0  px-2">
-            <button
-              type="submit"
-              className="btn btn-secondary col-6"
-              onClick={props.handleSubmit}
-            >
-              Filter
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-  );
-};
+        </form>
+      </div>
+    );
+  }
+}
 
 export default FilterPanel;

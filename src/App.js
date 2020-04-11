@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
-import $ from "jquery";
 import "./App.css";
 import MainPage from "./pages/MainPage";
 import News from "./pages/News";
@@ -67,7 +66,7 @@ class App extends Component {
                     </li>
                     <li className="nav-item dropdown mx-md-3">
                       <a
-                        href="#"
+                        href="123"
                         className="nav-link dropdown-toggle"
                         data-toggle="dropdown"
                       >
@@ -104,7 +103,7 @@ class App extends Component {
             </div>
           </div>
 
-          <div className="pages container px-4 px-md-0 d-flex align-items-center">
+          <div className="pages px-4 px-md-0 d-flex align-items-stretch">
             <Route exact path="/MainPage">
               <MainPage></MainPage>
             </Route>

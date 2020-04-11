@@ -1,8 +1,9 @@
-.mainPage {
+/* .mainPage {
   height: 100%;
 }
-.mainPage img {
-}
+.mainPage > .row {
+  height: 100%;
+} */
 
 .mainPage .part2 {
 }

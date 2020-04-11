@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
-import $ from "jquery";
 import "../styles/Shop.css";
 import ShopItems from "../components/ShopItems";
 import FilterPanel from "../components/FilterPanel";
@@ -10,12 +9,10 @@ class Mans extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filter: {
-        name: "",
-        minPrice: 0,
-        maxPrice: "",
-        color: "",
-      },
+      name: "",
+      minPrice: 0,
+      maxPrice: "",
+      color: "",
     };
   }
 
@@ -35,19 +32,36 @@ class Mans extends Component {
   };
 
   renderItems = () => {
-    const items = this.props.data.items.map((e, index) => {
-      return (
-        <ShopItems
-          item={this.props.data.items[index]}
-          slide={this.slideImage}
-        ></ShopItems>
-      );
+    let items = this.props.data.items
+      .filter((e) => e.male === "m")
+      .map((e, index) => {
+        return (
+          <ShopItems
+            key={e.id}
+            item={this.props.data.items[index]}
+            slide={this.slideImage}
+          ></ShopItems>
+        );
+      });
+    items = items.filter((e) => {
+      return e.props.item.brand
+        .concat(" ")
+        .concat(e.props.item.model)
+        .toLowerCase()
+        .includes(this.state.name.toLowerCase());
     });
+
     return items;
   };
 
-  handleFilterSubmit = (e) => {
+  handleFilterSubmit = (e, name, minPrice, maxPrice, color) => {
     e.preventDefault();
+    this.setState({
+      name: name,
+      minPrice: minPrice,
+      maxPrice: maxPrice,
+      color: color,
+    });
   };
 
   render() {
