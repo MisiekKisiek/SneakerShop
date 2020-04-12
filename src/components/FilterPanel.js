@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
+import ColorOption from "./ColorOption";
 
 class FilterPanel extends Component {
   constructor(props) {
@@ -9,13 +10,20 @@ class FilterPanel extends Component {
       searchName: "",
       minPrice: "",
       maxPrice: "",
-      color: "All colors",
+      color: "all colors",
     };
   }
   handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value,
     });
+  };
+
+  colorOptions = () => {
+    const colorList = this.props.colorList.map((e) => (
+      <ColorOption value={e}></ColorOption>
+    ));
+    return colorList;
   };
   render() {
     return (
@@ -52,7 +60,7 @@ class FilterPanel extends Component {
                 type="number"
                 className="form-control"
                 id="maxPrice"
-                placeholder="1000"
+                placeholder="10000"
                 value={this.state.maxPrice}
                 onChange={this.handleChange}
               />
@@ -66,10 +74,8 @@ class FilterPanel extends Component {
                 value={this.state.color}
                 onChange={this.handleChange}
               >
-                <option value="All colors">All colors</option>
-                <option value="white">white</option>
-                <option value="black">black</option>
-                <option value="purple">purple</option>
+                <option value="All colors">all colors</option>
+                {this.colorOptions()}
               </select>
             </div>
             <div className="form-group col-md-6 text-bottom d-flex align-items-end justify-content-center  mt-3 mt-md-0  px-2">
@@ -88,7 +94,7 @@ class FilterPanel extends Component {
                     searchName: "",
                     minPrice: "",
                     maxPrice: "",
-                    color: "All colors",
+                    color: "all colors",
                   });
                 }}
               >

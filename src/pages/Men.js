@@ -10,9 +10,9 @@ class Mans extends Component {
     super(props);
     this.state = {
       name: "",
-      minPrice: 0,
+      minPrice: "",
       maxPrice: "",
-      color: "",
+      color: "all colors",
     };
   }
 
@@ -43,6 +43,7 @@ class Mans extends Component {
           ></ShopItems>
         );
       });
+
     items = items.filter((e) => {
       return e.props.item.brand
         .concat(" ")
@@ -50,6 +51,32 @@ class Mans extends Component {
         .toLowerCase()
         .includes(this.state.name.toLowerCase());
     });
+
+    if (this.state.minPrice !== "") {
+      items = items.filter((e) => {
+        return parseInt(e.props.item.price) >= parseInt(this.state.minPrice);
+      });
+    }
+
+    if (this.state.maxPrice !== "") {
+      items = items.filter((e) => {
+        return parseInt(e.props.item.price) <= parseInt(this.state.maxPrice);
+      });
+    }
+
+    if (this.state.color !== "all colors") {
+      items = items.filter((e) => {
+        let flag = false;
+        e.props.item.colorsAndImages.forEach((e) => {
+          e.colors.forEach((e) => {
+            if (e === this.state.color) {
+              flag = true;
+            }
+          });
+        });
+        return flag;
+      });
+    }
 
     return items;
   };
@@ -64,12 +91,29 @@ class Mans extends Component {
     });
   };
 
+  filterColorOptions = () => {
+    const colors = [];
+    this.props.data.items.forEach((e) =>
+      e.colorsAndImages.forEach((e) => {
+        e.colors.forEach((e) => {
+          if (!colors.includes(e)) {
+            colors.push(e);
+          }
+        });
+      })
+    );
+    return colors.sort();
+  };
+
   render() {
     return (
       <div className="container">
         <div className="row d-flex align-items-center mt-2 mt-md-4">
           <aside className="filter col-12">
-            <FilterPanel handleSubmit={this.handleFilterSubmit}></FilterPanel>
+            <FilterPanel
+              handleSubmit={this.handleFilterSubmit}
+              colorList={this.filterColorOptions()}
+            ></FilterPanel>
           </aside>
           <main className="items col-12 d-flex flex-row flex-wrap">
             {this.renderItems()}
