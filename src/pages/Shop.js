@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 import "../styles/Shop.css";
-import ShopItems from "../components/ShopItems";
+import ShopItem from "../components/ShopItem";
 import FilterPanel from "../components/FilterPanel";
+import { Route, BrowserRouter as Router } from "react-router-dom";
 
 class Mans extends Component {
   constructor(props) {
@@ -19,7 +20,10 @@ class Mans extends Component {
   slideImage = (images) => {
     const items = images.map((e, index) => {
       return (
-        <div className={index === 0 ? "carousel-item active" : "carousel-item"}>
+        <div
+          key={index}
+          className={index === 0 ? "carousel-item active" : "carousel-item"}
+        >
           <img
             src={require(`../shopItems/${e.img}`)}
             className="d-block w-100"
@@ -31,18 +35,12 @@ class Mans extends Component {
     return items;
   };
 
-  renderItems = () => {
+  renderItems = (male) => {
     let items = this.props.data.items
-      .filter((e) => e.male === "m")
-      .map((e, index) => {
-        return (
-          <ShopItems
-            key={e.id}
-            item={this.props.data.items[index]}
-            slide={this.slideImage}
-          ></ShopItems>
-        );
-      });
+      .filter((e) => e.male === male)
+      .map((e) => (
+        <ShopItem key={e.id} slide={this.slideImage} item={e}></ShopItem>
+      ));
 
     items = items.filter((e) => {
       return e.props.item.brand
@@ -107,19 +105,29 @@ class Mans extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row d-flex align-items-center mt-2 mt-md-4">
-          <aside className="filter col-12">
-            <FilterPanel
-              handleSubmit={this.handleFilterSubmit}
-              colorList={this.filterColorOptions()}
-            ></FilterPanel>
-          </aside>
-          <main className="items col-12 d-flex flex-row flex-wrap">
-            {this.renderItems()}
-          </main>
+      <Router>
+        <div className="container">
+          <div className="row d-flex align-items-center mt-2 mt-md-4">
+            <aside className="filter col-12">
+              <FilterPanel
+                handleSubmit={this.handleFilterSubmit}
+                colorList={this.filterColorOptions()}
+              ></FilterPanel>
+            </aside>
+            <main className="shopItems col-12 d-flex flex-row flex-wrap">
+              <Route exact path="/Men">
+                {this.renderItems("m")}
+              </Route>
+              <Route exact path="/Women">
+                {this.renderItems("f")}
+              </Route>
+              <Route exact path="/Kids">
+                {this.renderItems("k")}
+              </Route>
+            </main>
+          </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }

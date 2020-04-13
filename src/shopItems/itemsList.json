@@ -6,14 +6,15 @@
             "model":"Air Max 97",
             "male":"m",
             "price": "555.99",
+            "size":["37","39","43","45"],
             "colorsAndImages":[
                 {
                     "colors":["black","white"],
-                    "img": "nike97black-white.jpg"
+                    "img": "Mnike97black-white.jpg"
                 },
                 {
                     "colors":["white"],
-                    "img": "nike97white.jpg"
+                    "img": "Mnike97white.jpg"
                 }
             ]
         },
@@ -21,67 +22,117 @@
             "id":"2",
             "brand":"Nike",
             "model":"NMD R1",
-            "male":"m",
+            "male":"f",
             "price": "355.99",
+            "size":["37","39","43","45"],
             "colorsAndImages":[
                 {
                     "colors":["black","white"],
-                    "img": "nikenmdr1black-white.jpg"
+                    "img": "Mnikenmdr1black-white.jpg"
                 },
                 {
                     "colors":["white","purple"],
-                    "img": "nikenmdr1purple-white.jpg"
+                    "img": "Mnikenmdr1purple-white.jpg"
                 }
             ]
         },
         {
             "id":"3",
             "brand":"Nike",
-            "model":"NMD R1",
+            "model":"Air Force 1",
             "male":"m",
-            "price": "355.99",
+            "price": "409.99",
+            "size":["37","39","43","45"],
             "colorsAndImages":[
                 {
-                    "colors":["black","white"],
-                    "img": "nikenmdr1black-white.jpg"
+                    "colors":["black"],
+                    "img": "Mnikeairforce1black.jpg"
                 },
                 {
-                    "colors":["white","purple"],
-                    "img": "nikenmdr1purple-white.jpg"
+                    "colors":["white"],
+                    "img": "Mnikeairforce1white.jpg"
+                },
+                {
+                    "colors":["white","red"],
+                    "img": "Mnikeairforce1white-red.jpg"
+                },
+                {
+                    "colors":["white","blue"],
+                    "img": "Mnikeairforce1white-blue.jpg"
                 }
             ]
         },
         {
             "id":"4",
             "brand":"Nike",
-            "model":"NMD R1",
-            "male":"m",
-            "price": "355.99",
+            "model":"Air Force 1",
+            "male":"f",
+            "price": "489.99",
+            "size":["37","39","43","45"],
             "colorsAndImages":[
                 {
-                    "colors":["black","white"],
-                    "img": "nikenmdr1black-white.jpg"
+                    "colors":["white","orange"],
+                    "img": "Fnikeairforce1white-orange.jpg"
                 },
                 {
-                    "colors":["white","purple"],
-                    "img": "nikenmdr1purple-white.jpg"
+                    "colors":["white","brown","pink"],
+                    "img": "Fnikeairforce1white-brown-pink.jpg"
+                },
+                {
+                    "colors":["white","red","gold"],
+                    "img": "Fnikeairforce1white-red-gold.jpg"
+                },
+                {
+                    "colors":["white","pink","blue"],
+                    "img": "Fnikeairforce1white-pink-blue.jpg"
                 }
             ]
         },
         {
             "id":"5",
             "brand":"Nike",
-            "model":"NMD R1",
-            "male":"m",
-            "price": "355.99",
+            "model":"Air Max 720",
+            "male":"f",
+            "price": "dla Natki - 29.99",
+            "size":["37","39","43","45"],
             "colorsAndImages":[
                 {
-                    "colors":["black","white"],
-                    "img": "nikenmdr1black-white.jpg"
+                    "colors":["black"],
+                    "img": "Fnikeairmax720black.jpg"
                 },
                 {
-                    "colors":["white","purple"],
-                    "img": "nikenmdr1purple-white.jpg"
+                    "colors":["black","pink"],
+                    "img": "Fnikeairmax720black-pink.jpg"
+                },
+                {
+                    "colors":["white","orange","gold","yellow"],
+                    "img": "Fnikeairmax720white-gold-orange-yellow.jpg"
+                },
+                {
+                    "colors":["oceanic blue","blue"],
+                    "img": "Fnikeairmax720blue-oceanicBlue.jpg"
+                }
+            ]
+        },
+        {
+            "id":"6",
+            "brand":"Adidas",
+            "model":"Ozweego",
+            "male":"f",
+            "price": "379.99",
+            "size":["37","39","43","45"],
+            "colorsAndImages":[
+                {
+                    "colors":["white","black","gray"],
+                    "img": "Fadidasozweegowhite-black-gray.jpg"
+                },
+                {
+                    "colors":["white","pink","green","blue"],
+                    "img": "Fadidasozweegowhite-pink-green-blue.jpg"
+                },
+                {
+                    "colors":["white","pink","gray"],
+                    "img": "Fadidasozweegowhite-pink-grey.jpg"
                 }
             ]
         }

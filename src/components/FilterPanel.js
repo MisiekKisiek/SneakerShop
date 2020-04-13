@@ -20,8 +20,8 @@ class FilterPanel extends Component {
   };
 
   colorOptions = () => {
-    const colorList = this.props.colorList.map((e) => (
-      <ColorOption value={e}></ColorOption>
+    const colorList = this.props.colorList.map((e, index) => (
+      <ColorOption value={e} key={index}></ColorOption>
     ));
     return colorList;
   };

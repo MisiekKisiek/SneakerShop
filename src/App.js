@@ -10,7 +10,7 @@ import "bootstrap";
 import "./App.css";
 import MainPage from "./pages/MainPage";
 import News from "./pages/News";
-import Men from "./pages/Men";
+import Shop from "./pages/Shop";
 import data from "./shopItems/itemsList.json";
 
 class App extends Component {
@@ -80,10 +80,10 @@ class App extends Component {
                         <NavLink to="/Men" className="dropdown-item">
                           Men
                         </NavLink>
-                        <NavLink to="f" className="dropdown-item">
+                        <NavLink to="/Women" className="dropdown-item">
                           Women
                         </NavLink>
-                        <NavLink to="g" className="dropdown-item">
+                        <NavLink to="/Kids" className="dropdown-item">
                           Kids
                         </NavLink>
                       </div>
@@ -93,7 +93,7 @@ class App extends Component {
                       data-toggle="collapse"
                       data-target=".navbar-collapse.show"
                     >
-                      <NavLink className="nav-link" to="/d">
+                      <NavLink className="nav-link" to="/Contact">
                         Contact
                       </NavLink>
                     </li>
@@ -114,13 +114,13 @@ class App extends Component {
               <News></News>
             </Route>
             <Route exact path="/Men">
-              <Men data={this.state.data}></Men>
+              <Shop data={this.state.data}></Shop>
             </Route>
             <Route exact path="/Women">
-              <MainPage></MainPage>
+              <Shop data={this.state.data}></Shop>
             </Route>
             <Route exact path="/Kids">
-              <MainPage></MainPage>
+              <Shop data={this.state.data}></Shop>
             </Route>
             <Route exact path="/Contact">
               <MainPage></MainPage>
