@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7c0e9dba7b829eb41c3da58b39566613",
+    "revision": "cade1b1136bd5db18094608ee1f8a154",
     "url": "/SneakerShop/index.html"
   },
   {
-    "revision": "872ade40fc92f93373bb",
+    "revision": "a08c1e85026f52824622",
     "url": "/SneakerShop/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "c7c2f991394a71d01737",
-    "url": "/SneakerShop/static/css/main.7062689c.chunk.css"
+    "revision": "4c20aeda1a892ea88473",
+    "url": "/SneakerShop/static/css/main.fb6e1195.chunk.css"
   },
   {
-    "revision": "872ade40fc92f93373bb",
-    "url": "/SneakerShop/static/js/2.20a050e6.chunk.js"
+    "revision": "a08c1e85026f52824622",
+    "url": "/SneakerShop/static/js/2.1a436580.chunk.js"
   },
   {
     "revision": "150e7ebf1b16402b62fb665d1a7869df",
-    "url": "/SneakerShop/static/js/2.20a050e6.chunk.js.LICENSE.txt"
+    "url": "/SneakerShop/static/js/2.1a436580.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c7c2f991394a71d01737",
-    "url": "/SneakerShop/static/js/main.b61800c1.chunk.js"
+    "revision": "4c20aeda1a892ea88473",
+    "url": "/SneakerShop/static/js/main.0bb5a9ab.chunk.js"
   },
   {
     "revision": "b54a8073df8438311ab8",
@@ -106,10 +106,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "4f2cb9fe9d106216afd73dd4c7ddb2fd",
     "url": "/SneakerShop/static/media/Mnikenmdr1purple-white.4f2cb9fe.jpg"
-  },
-  {
-    "revision": "4eb06d7a85c26e4347fa6edeba214b2c",
-    "url": "/SneakerShop/static/media/logo100rose.4eb06d7a.png"
   },
   {
     "revision": "e19f36e84c69cc6e12f59de792ee0808",
