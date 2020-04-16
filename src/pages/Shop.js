@@ -17,29 +17,15 @@ class Mans extends Component {
     };
   }
 
-  slideImage = (images) => {
-    const items = images.map((e, index) => {
-      return (
-        <div
-          key={index}
-          className={index === 0 ? "carousel-item active" : "carousel-item"}
-        >
-          <img
-            src={require(`../shopItems/${e.img}`)}
-            className="d-block w-100"
-            alt="sneaker"
-          />
-        </div>
-      );
-    });
-    return items;
-  };
-
   renderItems = (male) => {
     let items = this.props.data.items
       .filter((e) => e.male === male)
       .map((e) => (
-        <ShopItem key={e.id} slide={this.slideImage} item={e}></ShopItem>
+        <ShopItem
+          key={e.id}
+          item={e}
+          addCartItem={this.props.addCartItem}
+        ></ShopItem>
       ));
 
     items = items.filter((e) => {

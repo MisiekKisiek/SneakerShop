@@ -5,10 +5,11 @@
 }
 
 .App {
-  min-height: 100vh;
+  min-height: calc(100vh - 54px);
 }
 
 .App nav {
+  z-index: 4;
   height: 54px;
   background-color: rgb(255, 252, 249) !important;
 }
@@ -16,16 +17,48 @@
   background-color: rgba(255, 252, 249) !important;
   z-index: 3;
 }
-
-.App .pages {
-  min-height: calc(100vh - 54px - 40px);
-  padding: 1rem;
+.App nav .collapse {
+  /* display: block; */
+  background-color: rgba(255, 252, 249) !important;
+  z-index: 3;
 }
 
-/* .App .pages .mainPage {
-  min-height: calc(100vh - 54px - 40px);
-} */
+.App nav .nav-item i {
+  font-size: 20px;
+}
 
+.App .pages {
+  margin-top: 54px;
+  min-height: calc(100vh - 54px - 40px);
+}
+
+.App .cart {
+  z-index: 3;
+  top: 54px;
+  right: -100%;
+  transition: 0.8s;
+  overflow-y: scroll;
+  background-color: rgba(255, 252, 249);
+}
+
+.App .cart::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.App .cart::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+
+.App .cart::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.App .cart.active {
+  right: 0%;
+}
 .App footer {
   height: 40px;
   line-height: 40px;

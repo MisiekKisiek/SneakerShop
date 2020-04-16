@@ -9,17 +9,27 @@ class MainPage extends Component {
     return (
       <div className="mainPage container d-flex align-items-center">
         <div className="row mx-0">
-          <div className="col-md-8 mx-auto shadow-sm p-3 rounded">
+          <div className="col-md-8 mx-auto shadow-sm py-3 px-0 p-md-3 rounded">
             <div className="part1 col-12 px-0 d-flex flex-wrap no-gutters mx-auto align-items-end justify-content-center mb-4">
-              <span className="no-gutters pb-0 pb-lg-1 font-weight-bold text-align-center mr-3 mb-3 mb-sm-0">
+              <span
+                className="no-gutters pb-0 pb-lg-1 font-weight-bold text-center mr-3"
+                style={{
+                  fontSize: "20px",
+                  lineHeight: "20px",
+                }}
+              >
                 We are
               </span>
-
-              <img
-                className="col-12 col-sm-10 no-gutters"
-                src={require("../img/logo100rose.png")}
-                alt="logo"
-              />
+              <span
+                className="no-gutters font-weight-bold font-italic align-bottom"
+                style={{
+                  color: "#A10455",
+                  fontSize: "54px",
+                  lineHeight: "54px",
+                }}
+              >
+                Sneakero
+              </span>
             </div>
             <div className="part2 d-flex flex-wrap flex-nowrap-md align-items-center justify-content-center mb-4">
               <span className="prefix col-12 col-md-auto text-center text-md-start">
@@ -48,7 +58,7 @@ class MainPage extends Component {
                   <span className="letter1">E</span>
                 </span>
               </span>
-              <span>
+              <span className="text-center">
                 with <strong>Passion, Patience and Love...</strong>
               </span>
             </div>

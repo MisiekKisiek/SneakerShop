@@ -6,7 +6,9 @@ import "../styles/ShopItem.css";
 class ShopItem extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      size: "",
+    };
   }
 
   showMiniImages = (e) => {
@@ -25,19 +27,56 @@ class ShopItem extends Component {
     return items;
   };
 
+  removeSize = (idElement) => {
+    document
+      .querySelectorAll(`.item${idElement}`)
+      .forEach((e) => e.classList.remove("active"));
+  };
+
+  changeActiveSize = (index, idElement, e) => {
+    this.removeSize(idElement);
+    document.querySelector(`.size${index + idElement}`).classList.add("active");
+    this.setState({
+      size: e,
+    });
+  };
+
   showSizes = (e) => {
+    const idElement = e.id;
     const items = e.size.map((e, index) => (
       <li
         key={`size${index}`}
-        className="list-group-item m-0 p-0 col-2 text-center border rounded"
+        className={`size ${`size${
+          index + idElement
+        }`} item${idElement} list-group-item btn m-0 p-0 col-2 text-center border rounded`}
+        onClick={() => this.changeActiveSize(index, idElement, e)}
       >
         {e}
       </li>
     ));
     return items;
   };
+
+  slideImage = (images) => {
+    const items = images.map((e, index) => {
+      return (
+        <div
+          key={index}
+          className={index === 0 ? "carousel-item active" : "carousel-item"}
+        >
+          <img
+            src={require(`../shopItems/${e.img}`)}
+            className="d-block w-100"
+            alt="sneaker"
+          />
+        </div>
+      );
+    });
+    return items;
+  };
+
   render() {
-    const { item, slide } = this.props;
+    const { item, addCartItem } = this.props;
     return (
       <div className="wrap col-12 col-12 col-sm-6 col-md-4 col-lg-3 my-3">
         <div className="card col-12 p-0 position-relative">
@@ -56,7 +95,9 @@ class ShopItem extends Component {
             data-interval="false"
             data-pause="hover"
           >
-            <div className="carousel-inner">{slide(item.colorsAndImages)}</div>
+            <div className="carousel-inner">
+              {this.slideImage(item.colorsAndImages)}
+            </div>
             <a
               className="carousel-control-prev"
               href={`#carousel${item.id}`}
@@ -85,22 +126,18 @@ class ShopItem extends Component {
           <div className="card-body p-2">
             <ul className="sizes list-group list-group-horizontal justify-content-center col-11 mx-2  p-0 flex-wrap">
               {this.showSizes(item)}
-              <li className="list-group-item m-0 p-0 col-2 text-center border rounded">
-                37
-              </li>
-              <li className="list-group-item m-0 p-0 col-2 text-center border rounded">
-                38
-              </li>
             </ul>
             <ul className="images list-group list-group-horizontal justify-content-center col-9 my-1 w-100 m-0 p-0 mx-auto">
               {this.showMiniImages(item)}
             </ul>
             <a
-              href="#"
-              className="btn btn-info col-6 mx-auto my-1 d-block"
-              style={{ fontSize: "0.7rem" }}
+              className="btn btn-info text-white col-6 mx-auto my-1 px-1 d-block"
+              style={{ fontSize: "0.8rem" }}
+              onClick={() => {
+                addCartItem(item, this.state.size);
+              }}
             >
-              Add to card
+              Add to cart
             </a>
           </div>
         </div>

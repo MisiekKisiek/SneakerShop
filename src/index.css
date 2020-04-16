@@ -5,6 +5,6 @@
 }
 
 body {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background-color: rgb(255, 252, 249) !important;
 }
