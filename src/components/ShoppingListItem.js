@@ -6,11 +6,11 @@ class ShoppingListItem extends Component {
     this.state = {};
   }
   render() {
-    const { item } = this.props;
+    const { cardItem } = this.props;
     return (
       <div className="card col-12">
         <h6 class="card-title">
-          {item.item.brand} {item.item.model}size:{item.size}
+          {cardItem.item.brand} {cardItem.item.model}size:{cardItem.size}
         </h6>
       </div>
     );

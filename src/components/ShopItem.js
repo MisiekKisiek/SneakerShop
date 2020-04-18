@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "bootstrap/dist/js/bootstrap.bundle";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 import "../styles/ShopItem.css";
@@ -8,18 +9,22 @@ class ShopItem extends Component {
     super(props);
     this.state = {
       size: "",
+      color: "",
     };
   }
 
   showMiniImages = (e) => {
+    const id = e.id;
     const items = e.colorsAndImages.map((e, index) => (
       <li
         key={`mini${index}`}
-        className="list-group-item col-3 m-1 p-0 border-0 rounded overflow-hidden mh-100"
+        className={`img${
+          index + id
+        } btn list-group-item col-3 m-1 p-0 border-0 rounded overflow-hidden mh-100`}
       >
         <img
           src={require(`../shopItems/${e.img}`)}
-          alt="shoeMiniImage"
+          alt="MiniImage"
           className="w-100"
         />
       </li>
@@ -29,7 +34,7 @@ class ShopItem extends Component {
 
   removeSize = (idElement) => {
     document
-      .querySelectorAll(`.item${idElement}`)
+      .querySelectorAll(`.size${idElement}`)
       .forEach((e) => e.classList.remove("active"));
   };
 
@@ -48,7 +53,7 @@ class ShopItem extends Component {
         key={`size${index}`}
         className={`size ${`size${
           index + idElement
-        }`} item${idElement} list-group-item btn m-0 p-0 col-2 text-center border rounded`}
+        }`} size${idElement} list-group-item btn m-0 p-0 col-2 text-center border rounded`}
         onClick={() => this.changeActiveSize(index, idElement, e)}
       >
         {e}
@@ -57,12 +62,17 @@ class ShopItem extends Component {
     return items;
   };
 
-  slideImage = (images) => {
-    const items = images.map((e, index) => {
+  slideImage = (e) => {
+    const id = e.id;
+    const items = e.colorsAndImages.map((e, index) => {
       return (
         <div
           key={index}
-          className={index === 0 ? "carousel-item active" : "carousel-item"}
+          className={
+            index === 0
+              ? `img${index + id} img${id} carousel-item active`
+              : `carousel-item`
+          }
         >
           <img
             src={require(`../shopItems/${e.img}`)}
@@ -95,9 +105,7 @@ class ShopItem extends Component {
             data-interval="false"
             data-pause="hover"
           >
-            <div className="carousel-inner">
-              {this.slideImage(item.colorsAndImages)}
-            </div>
+            <div className="carousel-inner">{this.slideImage(item)}</div>
             <a
               className="carousel-control-prev"
               href={`#carousel${item.id}`}
@@ -130,15 +138,26 @@ class ShopItem extends Component {
             <ul className="images list-group list-group-horizontal justify-content-center col-9 my-1 w-100 m-0 p-0 mx-auto">
               {this.showMiniImages(item)}
             </ul>
-            <a
+            <button
+              type="button"
               className="btn btn-info text-white col-6 mx-auto my-1 px-1 d-block"
               style={{ fontSize: "0.8rem" }}
+              data-toggle="popover"
+              title="Popover title"
+              data-content="And here's some amazing content. It's very engaging. Right?"
               onClick={() => {
-                addCartItem(item, this.state.size);
+                if (this.state.size !== "" || this.state.color !== "") {
+                  addCartItem(item, this.state.size);
+                  this.removeSize(item.id);
+                  this.setState({
+                    size: "",
+                    color: "",
+                  });
+                }
               }}
             >
               Add to cart
-            </a>
+            </button>
           </div>
         </div>
       </div>

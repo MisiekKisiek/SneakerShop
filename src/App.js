@@ -42,7 +42,7 @@ class App extends Component {
 
   createCartItem = () => {
     const items = this.state.cardItems.map((e) => (
-      <ShoppingListItem item={e}></ShoppingListItem>
+      <ShoppingListItem cardItem={e}></ShoppingListItem>
     ));
     return items;
   };
@@ -52,6 +52,8 @@ class App extends Component {
       cardItems: [],
     });
   };
+
+  popoverWhenBuy = () => {};
   render() {
     return (
       <Router>
@@ -149,7 +151,6 @@ class App extends Component {
                   </ul>
                   <div className="cartBtn nav-item dropleft d-none d-md-flex px-0 mr-3 text-secondary justify-content-stretch">
                     <a
-                      to="/Cart"
                       className="btn nav-link text-secondary px-0"
                       onClick={this.showCart}
                     >
@@ -182,7 +183,7 @@ class App extends Component {
                   </div>
                   <div className="nav-item dropdown d-flex d-md-none px-0">
                     <a
-                      className="btn nav-link text-secondary px-0"
+                      className="btn nav-link text-secondary px-0 dropdown-toggle"
                       data-toggle="dropdown"
                       aria-haspopup="true"
                       aria-expanded="false"
@@ -204,9 +205,8 @@ class App extends Component {
             >
               <span aria-hidden="true">&times;</span>
             </button>
-            <div className="shoppingList col-12 mt-4">
-              {this.createCartItem()}
-            </div>
+            <h2 className=" mt-5 mb-3">My cart:</h2>
+            <div className="shoppingList col-12">{this.createCartItem()}</div>
             <button className="btn btn-info" onClick={this.orderCartItems}>
               Order!
             </button>
@@ -216,7 +216,7 @@ class App extends Component {
               <MainPage></MainPage>
             </Route>
             <Route exact path="/SneakerShop">
-              <Redirect to="/MainPage" />
+              <MainPage></MainPage>
             </Route>
             <Route exact path="/News">
               <News></News>
