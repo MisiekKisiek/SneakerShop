@@ -18,9 +18,11 @@ class ShopItem extends Component {
     const items = e.colorsAndImages.map((e, index) => (
       <li
         key={`mini${index}`}
-        className={`img${
+        className={` miniImage miniImage${id} img${
           index + id
-        } btn list-group-item col-3 m-1 p-0 border-0 rounded overflow-hidden mh-100`}
+        } imgItem${id} btn list-group-item col-3 m-1 p-0 border-0 rounded overflow-hidden mh-100`}
+        data-colorandimage={{ color: e.colors, img: e.img }}
+        onClick={() => this.changeColorImg(id, index, e)}
       >
         <img
           src={require(`../shopItems/${e.img}`)}
@@ -30,6 +32,20 @@ class ShopItem extends Component {
       </li>
     ));
     return items;
+  };
+
+  removeColorImg = () => {};
+
+  changeColorImg = (allImages, image, colorAndImage) => {
+    document
+      .querySelectorAll(`.imgItem${allImages}`)
+      .forEach((e) => e.classList.remove("active"));
+    document.querySelectorAll(`.img${image + allImages}`).forEach((e) => {
+      e.classList.add("active");
+    });
+    this.setState({
+      color: colorAndImage,
+    });
   };
 
   removeSize = (idElement) => {
@@ -70,8 +86,8 @@ class ShopItem extends Component {
           key={index}
           className={
             index === 0
-              ? `img${index + id} img${id} carousel-item active`
-              : `carousel-item`
+              ? `img${index + id} imgItem${id} carousel-item active`
+              : `img${index + id} imgItem${id} carousel-item`
           }
         >
           <img
@@ -146,9 +162,16 @@ class ShopItem extends Component {
               title="Popover title"
               data-content="And here's some amazing content. It's very engaging. Right?"
               onClick={() => {
-                if (this.state.size !== "" || this.state.color !== "") {
-                  addCartItem(item, this.state.size);
+                if (this.state.size !== "" && this.state.color !== "") {
+                  addCartItem(
+                    JSON.parse(JSON.stringify(item)),
+                    this.state.size,
+                    this.state.color
+                  );
                   this.removeSize(item.id);
+                  document
+                    .querySelectorAll(`.miniImage${item.id}`)
+                    .forEach((e) => e.classList.remove("active"));
                   this.setState({
                     size: "",
                     color: "",

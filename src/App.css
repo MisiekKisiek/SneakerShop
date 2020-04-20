@@ -35,7 +35,8 @@
 .App .cart {
   z-index: 3;
   top: 54px;
-  right: -100%;
+  /* right: -100%; */
+  right: 0%;
   transition: 0.8s;
   overflow-y: scroll;
   background-color: rgba(255, 252, 249);
@@ -58,6 +59,10 @@
 
 .App .cart.active {
   right: 0%;
+}
+
+.App .cart .card:last-child {
+  margin-bottom: 100px;
 }
 .App footer {
   height: 40px;

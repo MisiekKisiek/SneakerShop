@@ -11,3 +11,7 @@
 .shopItems .card .size.active {
   background-color: #17a2b8;
 }
+
+.shopItems .miniImage.active {
+  border: 2px solid #17a2b8 !important;
+}
